@@ -36,7 +36,7 @@ export default function TextArea({ dynamicLink, defaultText }) {
     } else if (type === "LINK") {
       saveText(text);
       customToast("link valid for 24h.", "🔗");
-      copyToClipboard(`http://localhost:3000/?id=${textcopied}`);
+      copyToClipboard(`share-txt.vercel.app/?id=${textcopied}`);
     } else {
       customToast("something went wrong!!", "❗");
     }
