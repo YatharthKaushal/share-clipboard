@@ -1,26 +1,26 @@
 "use client";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import { copySVG, shareSVG } from "@/assets";
 import Image from "next/image";
 import React, { useEffect, useState, useMemo, useRef } from "react";
-import Clipboard from "clipboard";
+// import Clipboard from "clipboard";
 import copyToClipboard from "copy-to-clipboard";
 import toast from "react-hot-toast";
 import { addText } from "@/app/actions";
 import { customToast } from "@/app/helpers/customToast";
 
 export default function TextArea({ dynamicLink, defaultText }) {
-  const searchParams = useSearchParams();
-  const myParam = searchParams.get("search");
+  // const searchParams = useSearchParams();
+  // const myParam = searchParams.get("search");
 
-  useEffect(() => {
-    // console.log("> dynamicLink: ", dynamicLink);
-    if (!myParam) {
-      // console.log("> no paramas");
-      return;
-    }
-    // console.log("> search param: ", myParam);
-  }, []);
+  // useEffect(() => {
+  //   // console.log("> dynamicLink: ", dynamicLink);
+  //   if (!myParam) {
+  //     // console.log("> no paramas");
+  //     return;
+  //   }
+  //   // console.log("> search param: ", myParam);
+  // }, []);
 
   const [text, setText] = useState(defaultText || "");
   const prevText = useRef(text);
@@ -45,7 +45,7 @@ export default function TextArea({ dynamicLink, defaultText }) {
   const saveText = () => {
     if (text !== prevText.current) {
       addText(text, dynamicLink);
-      toast.success("text saved");
+      // toast.success("text saved");
       prevText.current = text;
       return;
     }
@@ -103,7 +103,7 @@ export default function TextArea({ dynamicLink, defaultText }) {
               </div>
             </button>
             <span className="px-2 my-auto truncate">
-              {`shareclipboard.vercel.app/?id=${dynamicLink}`}
+              {`share-txt.vercel.app/?id=${dynamicLink}`}
             </span>
           </div>
         </div>
